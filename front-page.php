@@ -3,15 +3,7 @@
 
   if ( isset( $_POST['emp_exit'] ) ) {
 
-    $empExit = esc_html( $_POST['emp_exit'] );
-
-    if ( $empExit == 'Y' ) {
-
-      update_field( 'logged_in_employee', 'none', 11 );
-      update_field( 'logged_in_employee_pin', 'none', 11 );
-      update_field( 'logged_in_employee_index', 0, 11 );
-
-    }
+    gc_log_out_employee();
 
   }
 
