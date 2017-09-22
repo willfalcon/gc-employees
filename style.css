@@ -1,0 +1,83 @@
+/*
+Theme Name: Good Citizen Employees
+Theme URI: https://willhawks.com/wordpress/gc-employees
+Author: Will Hawks
+Author URI: https://willhawks.com
+Description: Theme built for the employee section of the Good Citizen Website.
+Version: 1.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: gc-employees
+*/
+
+body, html, .container-fluid {
+  height: 100%;
+}
+
+body {
+  background-color: #343a40;
+}
+
+.gc-emp-login-logo {
+  width: 200px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7%;
+}
+
+.gc-emp-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, .75);
+  max-width: 75%;
+  width: 450px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2%;
+  padding: 10%;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px #aaa;
+  text-align: center;
+}
+
+.gc-emp-card-loggedin {
+  padding: 7%;
+  margin-top: 12%;
+}
+
+.gc-emp-password {
+  text-align: center;
+  background-color: rgba(255, 255, 255, .75);
+}
+
+.gc-login-btn {
+  text-align: center;
+  padding-left: 15%;
+  padding-right: 15%;
+  min-width: 100px;
+  width: inherit;
+  background-color: rgba(255, 255, 255, .75);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-control {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.gc-exit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gc-exit-button {
+  background-color: transparent;
+  border: none;
+
+
+}
