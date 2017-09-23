@@ -6,7 +6,7 @@
 
     $loggedInEmp = get_field( 'logged_in_employee' );
     $loggedInEmpPIN = get_field( 'logged_in_employee_pin' );
-    $loggedInEmpIndex = get_field( 'logged_in_employee_index' );
+    $loggedInEmpID = get_field( 'logged_in_employee_id' );
 
     $time_id = $loggedInEmpPIN . date_i18n( 'Ymd' ) . date_i18n( 'H:i:s' );
 
@@ -20,13 +20,14 @@
     );
 
     add_row( 'clocked_in_employees', $empClockIn );
-    update_sub_field( array('employees', $loggedInEmpIndex, 'is_clocked_in'), true, 'option' );
+
+    update_field( 'cpt_is_clocked_in', true, $loggedInEmpID );
 
   }
 
 ?>
 
-<h3>Welcome, <?php the_field( 'logged_in_employee' ); ?>!</h3>
+<h3>Welcome, <?php echo $loggedInEmp; ?>!</h3>
 
 <form name="emp-clock-out-form" method="post" action="">
   <input type="hidden" name="emp_clock_out" value="Y">
