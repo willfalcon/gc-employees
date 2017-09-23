@@ -36,24 +36,26 @@ if (function_exists( 'acf_add_options_page' )) {
   ));
 }
 
-add_filter('acf/settings/path', 'my_acf_settings_path');
+// add_filter('acf/settings/path', 'my_acf_settings_path');
+//
+// function my_acf_settings_path( $path ) {
+//     $path = get_stylesheet_directory() . '/inc/acf/';
+//     return $path;
+// }
+//
+// add_filter('acf/settings/dir', 'my_acf_settings_dir');
+//
+// function my_acf_settings_dir( $dir ) {
+//     $dir = get_stylesheet_directory_uri() . '/inc/acf/';
+//     return $dir;
+// }
 
-function my_acf_settings_path( $path ) {
-    $path = get_stylesheet_directory() . '/inc/acf/';
-    return $path;
-}
+//add_filter('acf/settings/show_admin', '__return_false');
+// include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
+// include_once( get_stylesheet_directory() . '/inc/fields.php' );
 
-add_filter('acf/settings/dir', 'my_acf_settings_dir');
 
-function my_acf_settings_dir( $dir ) {
-    $dir = get_stylesheet_directory_uri() . '/inc/acf/';
-    return $dir;
-}
-
-add_filter('acf/settings/show_admin', '__return_false');
-include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
-include_once( get_stylesheet_directory() . '/inc/fields.php' );
-
+require get_parent_theme_file_path( '/inc/employees.php' );
 
 
 
