@@ -21,7 +21,7 @@
 
     add_row( 'clocked_in_employees', $empClockIn );
 
-    update_field( 'cpt_is_clocked_in', true, $loggedInEmpID );
+    update_field( 'is_clocked_in', true, $loggedInEmpID );
 
   }
 

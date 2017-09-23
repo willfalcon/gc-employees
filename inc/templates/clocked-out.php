@@ -70,8 +70,8 @@
           'cpt_minutes' => $difm
         );
 
-        add_row( 'cpt_timesheet', $timestamp, $loggedInEmpID );
-        update_field( 'cpt_is_clocked_in', false, $loggedInEmpID );
+        add_row( 'timesheet', $timestamp, $loggedInEmpID );
+        update_field( 'is_clocked_in', false, $loggedInEmpID );
         delete_row( 'clocked_in_employees', $deleteRow );
 
       }

@@ -9,9 +9,9 @@
 
   if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
 
-    if ( get_field( 'cpt_employee_pin' ) == $enteredPin ) {
+    if ( get_field( 'employee_pin' ) == $enteredPin ) {
       $empName = get_the_title();
-      $empPIN = get_field( 'cpt_employee_pin' );
+      $empPIN = get_field( 'employee_pin' );
       $empPostID = $post->ID;
       //$empNo = get_row_index();
     }
