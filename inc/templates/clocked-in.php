@@ -22,12 +22,12 @@
     add_row( 'clocked_in_employees', $empClockIn );
 
     update_field( 'is_clocked_in', true, $loggedInEmpID );
-
+    update_field( 'time_id', $time_id, $loggedInEmpID);
   }
 
 ?>
 
-<h3>Welcome, <?php echo $loggedInEmp; ?>!</h3>
+<h3><?php gc_greeting(); gc_display_name( $loggedInEmpID ); ?>!</h3>
 
 <form name="emp-clock-out-form" method="post" action="">
   <input type="hidden" name="emp_clock_out" value="Y">

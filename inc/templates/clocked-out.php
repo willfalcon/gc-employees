@@ -5,10 +5,11 @@
   if ( $clockOut == 'Y' ) {
 
     $loggedInEmpID = get_field( 'logged_in_employee_id' );
+    $timeID = get_field( 'time_id', $loggedInEmpID );
 
     if ( have_rows( 'clocked_in_employees' ) ) : while ( have_rows( 'clocked_in_employees' ) ) : the_row();
 
-      if ( get_sub_field( 'clocked_in_employee_pin' ) == get_field( 'logged_in_employee_pin' ) ) {
+      if ( get_sub_field( 'current_timestamp_id' ) == $timeID ) {
 
         $deleteRow = get_row_index();
         $clockInTime = get_sub_field( 'current_clock_in_time');
@@ -62,12 +63,12 @@
         //$timeElapsed = gc_get_time_elapsed( $clockInHour, $clockInMinute, $clockOutHour, $clockOutMinute );
 
         $timestamp = array(
-          'cpt_id' => get_sub_field( 'current_timestamp_id' ),
-          'cpt_date' => date_i18n('Ymd'),
-          'cpt_clocked_in' => $clockInTime,
-          'cpt_clocked_out' => $clockOutTime,
-          'cpt_hours' => $difh,
-          'cpt_minutes' => $difm
+          'id' => get_sub_field( 'current_timestamp_id' ),
+          'date' => date_i18n('Ymd'),
+          'clocked_in' => $clockInTime,
+          'clocked_out' => $clockOutTime,
+          'hours' => $difh,
+          'minutes' => $difm
         );
 
         add_row( 'timesheet', $timestamp, $loggedInEmpID );

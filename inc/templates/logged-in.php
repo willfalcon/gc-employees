@@ -1,32 +1,29 @@
 <?php
 
-  $enteredPin = esc_html( $_POST['gc_emp_pin'] ) ;
+  $empPostID = get_field( 'logged_in_employee_id' );
+  $date = date_i18n( 'l, F j, Y' );
+  $empIsClockedIn = get_field( 'is_clocked_in', $empPostID );
 
-  $args = array(
-    'post_type' => 'employee',
-  );
-  $query = new WP_Query( $args );
-
-  if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
-
-    if ( get_field( 'employee_pin' ) == $enteredPin ) {
-      $empName = get_the_title();
-      $empPIN = get_field( 'employee_pin' );
-      $empPostID = $post->ID;
-      //$empNo = get_row_index();
-    }
-
-  endwhile; endif; wp_reset_postdata();
-
-
-  update_field( 'logged_in_employee', $empName );
-  update_field( 'logged_in_employee_pin', $empPIN );
-  update_field( 'logged_in_employee_id', $empPostID );
 ?>
 
-<h3>Welcome, <?php the_field( 'logged_in_employee' ); ?>!</h3>
+
+
+<h3><?php gc_greeting(); gc_display_name( $empPostID ); ?>!</h3>
+
+<h5 class="my-3"><?php echo $date; ?></h5>
+
+<?php if ( $empIsClockedIn ) : ?>
+  
+  <form name="emp-clock-out-form" method="post" action="">
+    <input type="hidden" name="emp_clock_out" value="Y">
+    <button type="submit" class="btn btn-outline-danger btn-lg mt-5">Clock Out</button>
+  </form>
+
+<?php else : ?>
 
 <form name="emp-clock-in-form" method="post" action="">
   <input type="hidden" name="emp_clock_in" value="Y">
-  <button type="submit" class="btn btn-outline-success btn-lg mt-5">Clock In</button>
+  <button type="submit" class="btn btn-outline-success btn-lg my-3">Clock In</button>
 </form>
+
+<?php endif; ?>

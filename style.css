@@ -4,7 +4,7 @@ Theme URI: https://willhawks.com/wordpress/gc-employees
 Author: Will Hawks
 Author URI: https://willhawks.com
 Description: Theme built for the employee section of the Good Citizen Website.
-Version: 1.0.2
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: gc-employees
@@ -15,12 +15,18 @@ body, html, .container-fluid {
 }
 
 body {
-  background-color: #343a40;
+  background-color: #F7F9FC;
+  color: #000;
 }
 
+
+/*===============*/
+/*===  Login  ===*/
+/*===============*/
+
 .gc-emp-login-logo {
-  width: 200px;
-  max-width: 100%;
+
+  max-width: 300px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 7%;
@@ -51,6 +57,7 @@ body {
 .gc-emp-password {
   text-align: center;
   background-color: rgba(255, 255, 255, .75);
+  -webkit-text-security: disc;
 }
 
 .gc-login-btn {
@@ -70,14 +77,153 @@ body {
   margin-bottom: 1rem;
 }
 
-.gc-exit {
+
+/*===================*/
+/*===  Dashboard  ===*/
+/*===================*/
+
+.gc-navbar {
+  background-color: #fff;
+  box-shadow: 0 1px 2px #aaa;
+}
+
+.gc-exit-container {
   display: flex;
   justify-content: flex-end;
+  margin-top: 5px;
 }
 
 .gc-exit-button {
   background-color: transparent;
+  color: #6B6B6A;
   border: none;
-
-
+  padding: 0px;
 }
+
+.gc-emp-nav-logo {
+  width: 150px;
+  max-width: 100%;
+  /*margin-left: auto;
+  margin-right: auto;*/
+}
+
+
+.gc-card {
+  border-radius: 2px;
+  box-shadow: 0 1px 2px #aaa;
+  background-color: #fff;
+  color: #6B6B6A;
+}
+
+
+.gc-emp-dashboard {
+  background-color: #fff;
+  max-width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius: 4px;
+  color: #6B6B6A;
+}
+
+.gc-dash-left {
+  padding-top: 10px;
+  padding-bottom: 500px;
+}
+
+.gc-dash-center {
+  margin-top: 15px;
+}
+.gc-dash-right {
+  margin-top: 15px;
+}
+
+.gc-clock-in-out-container {
+  padding: 1rem;
+}
+
+
+.gc-clock-btn {
+  width: 105px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.list-group-item {
+  border: 0px;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.list-group-item:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.gc-schedule {
+  padding: 1rem;
+}
+
+.gc-schedule-list {
+  display: flex;
+  align-items: center;
+}
+
+.gc-date-block {
+    width: 50px;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.gc-date-block-bottom {
+    background-color: #BA7337;
+    color: #fff;
+}
+
+.gc-request-block {
+    width: 100%;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.gc-req-block-off {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.gc-req-block-work {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.gc-schedule-item {
+    margin-left: 10px;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+      max-width: 800px;
+      margin-top: 10%;
+  }
+}
+
+ .gc-modal-title {
+   max-width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ .gc-request-link {
+   display: inline-block;
+   line-height: 1.25;
+   padding: .5rem .75rem;
+   margin-top: .75rem;
+ }
+
+ .gc-add-edit-btn {
+   margin-left: 1.25rem;
+ }
+/*=================*/
+/*=== Utilities ===*/
+/*=================*/

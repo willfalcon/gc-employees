@@ -30,8 +30,8 @@ if (function_exists( 'acf_add_options_page' )) {
   ));
 
   acf_add_options_sub_page( array(
-    'page_title' => 'Add/Edit Employees',
-    'menu_title' => 'Add/Edit Employees',
+    'page_title' => 'Schedule',
+    'menu_title' => 'Schedule',
     'parent_slug' => 'employees'
   ));
 }

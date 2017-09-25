@@ -13,6 +13,7 @@
 
     }
   }
+  
 
   get_header();
 
@@ -21,9 +22,9 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 
-      <div class="gc-emp-login-logo">
-        <?php the_custom_logo(); ?>
-      </div>
+  <div class="gc-emp-login-logo">
+    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo-white.png" alt="Good Citizen Logo" class="img-fluid">
+  </div>
 
       <div class="gc-emp-card">
 
@@ -31,7 +32,7 @@
 
           <input type="hidden" name="gc_emp_login_submitted" value="Y">
 
-          <input type="password" class="form-control gc-emp-password" name="gc_emp_pin" id="exampleInputPassword1" placeholder="PIN">
+          <input type="number" class="form-control gc-emp-password" name="gc_emp_pin" id="exampleInputPassword1" placeholder="PIN">
 
           <button id="gc-login" class="form-control btn btn-outline-secondary gc-login-btn" type="submit">Login</button>
         </form>
