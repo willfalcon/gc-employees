@@ -57,9 +57,10 @@ if ( isset( $_POST['gc_emp_pin'] ) ) {
   </div>
 </nav>
 
-        <div class="container-fluid">
+<div class="container-fluid">
   <div class="row">
 
+    <?php get_template_part( '/inc/templates/dashboard', 'menu' ); ?>
     <?php get_template_part( '/inc/templates/dashboard' ); ?>
 
     <div class="col-5">
@@ -85,19 +86,6 @@ if ( isset( $_POST['gc_emp_pin'] ) ) {
 
     </div>
   </div>
-
-  <?php
-
-  if ( have_rows( 'employees', 'option' ) ) : while ( have_rows( 'employees', 'option' ) ) : the_row();
-    if ( get_sub_field( 'employee_name' ) == get_field( 'logged_in_employee' ) ) {
-      $isClockedIn = get_sub_field( 'is_clocked_in' );
-    }
-  endwhile; endif;
-
-?>
-
-
-
 
 
 <?php endwhile; else : ?>

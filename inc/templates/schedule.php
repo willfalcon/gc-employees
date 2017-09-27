@@ -1,13 +1,13 @@
 <?php
 
   $empID = get_field( 'logged_in_employee_id' );
-  
+
 
   if ( have_rows( 'schedule', 'option' ) ) :
 
 ?>
 
-  <div class="tab-pane gc-schedule fade show active" id="list-schedule" role="tabpanel" aria-labelledby="list-schedule-list">
+  <div class="tab-pane gc-schedule fade" id="list-schedule" role="tabpanel" aria-labelledby="list-schedule-list">
 
     <h4 class="text-center">My Schedule</h4>
 
@@ -15,20 +15,30 @@
 
       <?php
 
+        $hadShifts = false;
+
         while ( have_rows( 'schedule', 'option' ) ) : the_row();
 
           $sched = get_sub_field( 'sched_date' );
 
           $schedDay = substr( $sched, 0, 3 );
           $schedDate = substr( $sched, -2 );
+          $schedMonth = substr( $sched, 4, -3 );
 
-          if ( get_row_index() == 1 ) {
-            $schedMonth = substr( $sched, 4, -3 );
-          } else {
-            if ( $schedMonth != substr( $sched, 4, -3 ) ) {
-              $schedMonth = substr( $sched, 4, -3 );
-            }
-          }
+          if ( get_row_index() == 1 ) :
+            $currMonth = $schedMonth; ?>
+            <li class="list-group-item">
+              <b><?php echo $schedMonth; ?></b>
+            </li>
+          <?php endif;
+
+          if ( $schedMonth != $currMonth ) :
+               $currMonth = $schedMonth; ?>
+           <li class="list-group-item">
+             <b><?php echo $schedMonth; ?></b>
+           </li>
+          <?php endif;
+
 
 
           if ( have_rows( 'shifts', 'option' ) ) : while ( have_rows( 'shifts', 'option' ) ) : the_row();
@@ -37,12 +47,10 @@
 
             if ( $emp->ID == $empID ) :
 
+              $hadShifts = true;
+
               ?>
-              <?php if ( $schedMonth ) : ?>
-                <li class="list-group-item">
-                  <b><?php echo $schedMonth; ?></b>
-                </li>
-              <?php endif; ?>
+
               <li class="list-group-item gc-schedule-list">
                 <div class="gc-date-block">
                   <div class="gc-date-block-top">
@@ -63,6 +71,15 @@
 
         endwhile; endif; endwhile;
 
+        if ( ! $hadShifts ) :
+          ?>
+            <li class="list-group-item">
+              <div class="gc-schedule-item">
+                No shifts currently scheduled.
+              </div>
+            </li>
+          <?php
+        endif;
       ?>
 
     </ul>

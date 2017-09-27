@@ -19,6 +19,12 @@ function gc_emp_theme_scripts() {
   wp_enqueue_script( 'gc_js', get_template_directory_uri() . '/assets/js/gc.js', array( 'jquery' ), '', true );
 }
 
+function gc_excerpt_length( $length ) {
+	return 30;
+}
+add_filter( 'excerpt_length', 'gc_excerpt_length', 999 );
+
+
 if (function_exists( 'acf_add_options_page' )) {
 
   acf_add_options_page( array(

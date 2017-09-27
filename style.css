@@ -4,7 +4,7 @@ Theme URI: https://willhawks.com/wordpress/gc-employees
 Author: Will Hawks
 Author URI: https://willhawks.com
 Description: Theme built for the employee section of the Good Citizen Website.
-Version: 1.1.0
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: gc-employees
@@ -115,6 +115,12 @@ body {
   color: #6B6B6A;
 }
 
+.list-group-item.active {
+  z-index: 2;
+  color: inherit;
+  background-color: inherit;
+  border-color: inherit;
+}
 
 .gc-emp-dashboard {
   background-color: #fff;
@@ -130,6 +136,11 @@ body {
 .gc-dash-left {
   padding-top: 10px;
   padding-bottom: 500px;
+}
+
+a.list-group-item {
+  padding-left: .75rem;
+  color: inherit;
 }
 
 .gc-dash-center {
@@ -162,6 +173,11 @@ body {
 .gc-schedule {
   padding: 1rem;
 }
+
+.gc-schedule-toggle {
+  padding: .25rem .75rem;
+}
+
 
 .gc-schedule-list {
   display: flex;
@@ -224,6 +240,23 @@ body {
  .gc-add-edit-btn {
    margin-left: 1.25rem;
  }
+
+ .gc-card-emp-schedule {
+   margin-top: 15px;
+ }
+
+ .gc-bulletin-excerpt {
+   margin-bottom: 0px;
+ }
+
+.gc-bulletin-more-btn {
+  display: block;
+  width: 70px;
+  max-width: 100%;
+  margin-left: auto;
+  padding: .4rem .9rem;
+}
+
 /*=================*/
 /*=== Utilities ===*/
 /*=================*/
