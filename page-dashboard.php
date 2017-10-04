@@ -39,9 +39,6 @@ if ( isset( $_POST['gc_emp_pin'] ) ) {
   get_header( 'dashboard' );
 
 
-    if ( have_posts() ) : while ( have_posts() ) : the_post();
-
-
 
   ?>
 
@@ -61,36 +58,13 @@ if ( isset( $_POST['gc_emp_pin'] ) ) {
   <div class="row">
 
     <?php get_template_part( '/inc/templates/dashboard', 'menu' ); ?>
-    <?php get_template_part( '/inc/templates/dashboard' ); ?>
+    <?php get_template_part( '/inc/templates/dashboard', 'center' ); ?>
+    <?php get_template_part( '/inc/templates/dashboard', 'right' ); ?>
 
-    <div class="col-5">
 
-        <div class="gc-dash-right gc-clock-in-out-container gc-card">
-
-          <?php
-            if ( isset( $_POST['gc_emp_pin'] ) ) {
-              get_template_part( '/inc/templates/logged-in' );
-            }
-
-            // gc_update_logged_in_employee();
-
-            if ( isset( $_POST['emp_clock_in'] ) ) {
-              get_template_part( '/inc/templates/clocked-in' );
-            }
-
-            if ( isset( $_POST['emp_clock_out'] ) ) {
-              get_template_part( '/inc/templates/clocked-out' );
-            }
-          ?>
-        </div>
-
-    </div>
   </div>
 
 
-<?php endwhile; else : ?>
-	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-<?php endif; ?>
 
 
 <?php get_footer(); ?>

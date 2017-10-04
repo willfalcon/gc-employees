@@ -63,7 +63,7 @@
                 ?>
 
                   <div class="gc-schedule-item">
-                   <?php gc_display_name( $emp->ID ); ?>: <?php the_sub_field( 'start_time' ); ?> - <?php the_sub_field( 'end_time' ); ?>
+                   <strong><?php gc_display_name( $emp->ID ); ?>:</strong> <?php the_sub_field( 'start_time' ); ?> - <?php the_sub_field( 'end_time' ); ?>
                  </div>
 
               <?php endwhile; ?>

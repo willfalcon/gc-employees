@@ -1,9 +1,8 @@
 <?php
-
   acf_form_head();
   get_header( 'dashboard' );
 
-  if ( have_posts() ) : while ( have_posts() ) : the_post();
+  //if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 ?>
 
@@ -25,25 +24,15 @@
 
     <?php get_template_part( '/inc/templates/dashboard', 'menu' ); ?>
 
-    <div class="col-10">
-      <div class="gc-card gc-card-emp-schedule">
-        <?php
 
-        $scheduleForm = array(
-          'post_id' => 'option',
-          'fields' => array(
-            'field_59c9461c9c319'
-          )
-        );
+    <?php get_template_part( '/inc/templates/schedule', 'edit' ); ?>
 
-        acf_form( $scheduleForm );
-
-        ?>
-      </div>
-    </div>
 
   </div>
 
-<?php endwhile; endif; ?>
+<?php
 
-<?php get_footer(); ?>
+  //endwhile; endif;
+   get_footer();
+
+ ?>

@@ -67,4 +67,127 @@
 
   }
 
+  function gc_excerpt( $message ) {
+
+    $excerpt = substr( $message, 0, 90 );
+
+    if ( strlen( $message ) > strlen( $excerpt ) ) {
+
+      $excerpt .= '...';
+
+    }
+
+    echo $excerpt;
+
+  }
+
+  function gcTwelveToTwentyfourHours( $time ) {
+    $amOrPm = substr( $time, -2 );
+    $hours = substr( $time, 0, -6 );
+
+    if ( $amOrPm == 'AM' ) {
+      if ( strlen( $hours ) == 1 ) {
+        $hours = '0' . $hours;
+        return $hours;
+      } else {
+        return $hours;
+      }
+    }
+
+    if ( $amOrPm == 'PM' ) {
+      switch ( $hours ) {
+        case '12':
+          return $hours;
+          break;
+        case '1':
+          $hours = '13';
+          break;
+        case '2':
+          $hours = '14';
+          break;
+        case '3':
+          $hours = '15';
+          break;
+        case '4':
+          $hours = '16';
+          break;
+        case '5':
+          $hours = '17';
+          break;
+        case '6':
+          $hours = '18';
+          break;
+        case '7':
+          $hours = '19';
+          break;
+        case '8':
+          $hours = '20';
+          break;
+        case '9':
+          $hours = '21';
+          break;
+        case '10':
+          $hours = '22';
+          break;
+        case '11':
+          $hours = '23';
+          break;
+        case '12':
+          $hours = '24';
+          break;
+      }
+      return $hours;
+    }
+
+  }
+
+function gcGetFullMonth( $date ) {
+
+  $mm = substr( $date, 4, 2 );
+
+  switch ( $mm ) {
+    case '01':
+      return 'January';
+      break;
+    case '02':
+      return 'February';
+      break;
+    case '03':
+      return 'March';
+      break;
+    case '04':
+      return 'April';
+      break;
+    case '05':
+      return 'May';
+      break;
+    case '06':
+      return 'June';
+      break;
+    case '07':
+      return 'July';
+      break;
+    case '08':
+      return 'August';
+      break;
+    case '09':
+      return 'September';
+      break;
+    case '10':
+      return 'October';
+      break;
+    case '11':
+      return 'November';
+      break;
+    case '12':
+      return 'December';
+      break;
+  }
+}
+
+
+
+
+
+
  ?>
