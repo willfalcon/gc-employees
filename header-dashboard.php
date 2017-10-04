@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,14 +7,9 @@
 
     <?php wp_head(); ?>
 
-      <style>
-        body {
-          background-color: #343a40;
-        }
-      </style>
-
-
   </head>
 
   <body <?php body_class(); ?>>
-    <div class="container-fluid">
+
+
+    

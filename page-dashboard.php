@@ -28,13 +28,19 @@ if ( isset( $_POST['gc_emp_pin'] ) ) {
     update_field( 'logged_in_employee_pin', $empPIN );
     update_field( 'logged_in_employee_id', $empPostID );
   } else {
-    wp_redirect( bloginfo( 'url' ) );
+    $home = bloginfo( 'url' );
+    wp_redirect( $home );
     exit;
   }
 
 }
 
- ?>
+  acf_form_head();
+  get_header( 'dashboard' );
+
+
+
+  ?>
 
 <nav class="navbar navbar-light gc-navbar">
   <div class="gc-emp-nav-logo navbar-brand">
@@ -47,3 +53,18 @@ if ( isset( $_POST['gc_emp_pin'] ) ) {
     </form>
   </div>
 </nav>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <?php get_template_part( '/inc/templates/dashboard', 'menu' ); ?>
+    <?php get_template_part( '/inc/templates/dashboard', 'center' ); ?>
+    <?php get_template_part( '/inc/templates/dashboard', 'right' ); ?>
+
+
+  </div>
+
+
+
+
+<?php get_footer(); ?>
