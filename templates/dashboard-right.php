@@ -3,7 +3,7 @@
 
     <?php
 
-      get_template_part( '/inc/templates/schedule' );
+      get_template_part( '/templates/schedule/dash-schedule' );
 
 
     ?>
