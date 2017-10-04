@@ -2,17 +2,7 @@ jQuery(document).ready(function($) {
 
   $('li.nav-item > a').addClass('nav-link');
 
-  // $('input.timepicker').timepicker({
-  //   timeFormat: 'h:mm p',
-  //   interval: 15,
-  //   minTime: '9',
-  //   maxTime: '10:00pm',
-  //   defaultTime: '11',
-  //   startTime: '9:00',
-  //   dynamic: false,
-  //   dropdown: true,
-  //   scrollbar: true
-  // });
+  //$('.acf-field-true-false > div.acf-input input').addClass('form-check-input');
 
 });
 
@@ -34,5 +24,18 @@ function gcDeleteShiftStart(sid) {
 
   jQuery('#delete-tue-shift-' + sid + '-confirm').removeClass('d-none');
   jQuery('#delete-tue-shift-' + sid + '-confirm').addClass('show');
+
+}
+
+function gcEmpCollapse(eid) {
+
+  jQuery('div.collapse.show').removeClass('show');
+
+}
+
+function gcDeleteEmpStart(deid) {
+  jQuery('.gc-delete-emp-start-' + deid).addClass('d-none');
+  jQuery('.gc-delete-emp-' + deid).removeClass('d-none');
+  jQuery('.gc-delete-emp-' + deid).addClass('show');
 
 }

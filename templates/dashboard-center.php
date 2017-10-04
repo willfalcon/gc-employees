@@ -9,11 +9,11 @@
 
     <?php
 
-      get_template_part( '/inc/templates/welcome' );
+      get_template_part( '/templates/clock/welcome' );
 
-      get_template_part( '/inc/templates/bulletin' );
+      get_template_part( '/templates/bulletin' );
 
-      get_template_part( '/inc/templates/info' );
+      get_template_part( '/templates/info' );
 
      ?>
 

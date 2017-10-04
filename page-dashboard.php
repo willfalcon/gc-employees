@@ -57,9 +57,9 @@ if ( isset( $_POST['gc_emp_pin'] ) ) {
 <div class="container-fluid">
   <div class="row">
 
-    <?php get_template_part( '/inc/templates/dashboard', 'menu' ); ?>
-    <?php get_template_part( '/inc/templates/dashboard', 'center' ); ?>
-    <?php get_template_part( '/inc/templates/dashboard', 'right' ); ?>
+    <?php get_template_part( '/templates/dashboard', 'menu' ); ?>
+    <?php get_template_part( '/templates/dashboard', 'center' ); ?>
+    <?php get_template_part( '/templates/dashboard', 'right' ); ?>
 
 
   </div>

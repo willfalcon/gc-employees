@@ -1,10 +1,3 @@
-<?php
-
-  acf_form_head();
-  get_header( 'dashboard' );
-
-?>
-
 <nav class="navbar navbar-light gc-navbar">
   <div class="gc-emp-nav-logo navbar-brand">
     <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo-black.png" alt="Good Citizen Logo" class="img-fluid">
@@ -16,21 +9,3 @@
     </form>
   </div>
 </nav>
-
-<div class="container-fluid">
-  <div class="row">
-
-    <?php get_template_part( '/templates/dashboard', 'menu' ); ?>
-
-
-    <?php get_template_part( '/templates/schedule/main' ); ?>
-
-
-  </div>
-
-<?php
-
-  //endwhile; endif;
-   get_footer();
-
- ?>

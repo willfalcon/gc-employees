@@ -13,7 +13,7 @@
 
     }
   }
-  
+
 
   get_header();
 
@@ -28,7 +28,7 @@
 
       <div class="gc-emp-card">
 
-        <form name="gc_emp_login_form" method="post" action="<?php bloginfo('url'); ?>/employee-dash/" class="gc-emp-login-form">
+        <form name="gc_emp_login_form" method="post" action="<?php bloginfo('url'); ?>/dashboard/" class="gc-emp-login-form">
 
           <input type="hidden" name="gc_emp_login_submitted" value="Y">
 

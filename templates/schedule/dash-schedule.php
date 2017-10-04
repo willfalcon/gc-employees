@@ -327,10 +327,6 @@
   </ul>
 
 
-    <a class="gc-request-link" data-toggle="collapse" href="#requests" aria-expanded="false" aria-controls="requests">
-      Requests
-    </a>
-    <div class="collapse" id="requests">
-      <?php get_template_part( '/inc/templates/requests' ); ?>
-    </div>
-  </div>
+
+      <?php get_template_part( '/templates/schedule/requests' ); ?>
+  
